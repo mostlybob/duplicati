@@ -57,6 +57,8 @@ namespace Duplicati.UnitTest
         [TestFixtureSetUp()]
         public virtual void PrepareSourceData()
         {
+			if (!Directory.Exists(BASEFOLDER))
+				throw new Exception(string.Format("The unittest base folder was not found: {0} ({1})", BASEFOLDER, Path.GetFullPath(BASEFOLDER)));
             Console.WriteLine("Deleting backup data and log...");
             if (Directory.Exists(DATAFOLDER))
                 Directory.Delete(DATAFOLDER, true);
