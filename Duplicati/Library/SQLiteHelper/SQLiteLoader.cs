@@ -88,6 +88,8 @@ namespace Duplicati.Library.SQLiteHelper
                         }
                     }
 
+					Console.WriteLine("Loading assembly from: {0}", System.IO.Path.Combine(assemblyPath, filename));
+
                     m_type = System.Reflection.Assembly.LoadFile(System.IO.Path.Combine(assemblyPath, filename)).GetType("System.Data.SQLite.SQLiteConnection");
                 }
 
