@@ -84,7 +84,7 @@ namespace Duplicati.Library.SQLiteHelper
                                 }
                             }
 
-                            Console.WriteLine("v6 Failed to load Mono.Data.Sqlite.SqliteConnection, reverting to built-in.");
+                            Console.WriteLine("v7 Failed to load Mono.Data.Sqlite.SqliteConnection, reverting to built-in.");
                         }
                     }
 
