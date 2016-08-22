@@ -32,5 +32,3 @@ ONBUILD WORKDIR /usr/src/app/build
 
 CMD ["mono", "./Duplicati.CommandLine.exe" ]
 
-# note that there is a Duplicati.sln.hold that I renamed because the docker 
-# build doesn't like having multiple .sln files in the current folder
