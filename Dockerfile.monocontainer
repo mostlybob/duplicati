@@ -23,12 +23,15 @@ RUN echo "deb http://download.mono-project.com/repo/debian wheezy/snapshots/4.4.
 RUN mkdir -p /usr/src/app/source /usr/src/app/build
 WORKDIR /usr/src/app/source
 
-ONBUILD COPY . /usr/src/app/source
-ONBUILD RUN nuget restore -NonInteractive
-ONBUILD RUN xbuild /property:Configuration=Release /property:OutDir=/usr/src/app/build/ "Duplicati CommandLine Only.sln"
-ONBUILD WORKDIR /usr/src/app/build
+COPY . /usr/src/app/source
+
+# until I can figure out why the build doesn't want to go, comment this stuff out and just run the container
+#ONBUILD COPY . /usr/src/app/source
+#ONBUILD RUN nuget restore -NonInteractive
+#ONBUILD RUN xbuild /property:Configuration=Release /property:OutDir=/usr/src/app/build/ "Duplicati CommandLine Only.sln"
+#ONBUILD WORKDIR /usr/src/app/build
 
 
 
-CMD ["mono", "./Duplicati.CommandLine.exe" ]
+#CMD ["mono", "./Duplicati.CommandLine.exe" ]
 
